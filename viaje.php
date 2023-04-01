@@ -11,7 +11,6 @@ class Viaje
         $this->codigo = $codigo;
         $this->destino = $destino;
         $this->CantMaxP = $CantMaxP;
-        //  $this->pasajeros = $pasaj;
     }
 
     public function getCodigo()
@@ -40,12 +39,10 @@ class Viaje
         return $this;
     }
 
-
     public function getCantMaxP()
     {
         return $this->CantMaxP;
     }
-
 
     public function setCantMaxP($CantMaxP)
     {
@@ -53,7 +50,7 @@ class Viaje
 
         return $this;
     }
-    //get no necesita parametros
+
     public function getPasajeros()
     {
         return $this->pasajeros;
@@ -124,10 +121,9 @@ class Viaje
         foreach ($this->pasajeros as $index => $pasajero) {
             if ($pasajero["documento"] == $documento) {
                 array_splice($this->pasajeros, $index, 1);
-                echo "Pasajero eliminado exitosamente.\n";
-                return;
+                return "Pasajero eliminado exitosamente.\n";
             }
         }
-        echo "No se encontró al pasajero con el número de documento ingresado.\n";
+        return "No se encontró al pasajero con el número de documento ingresado.\n";
     }
 }
